@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f14;
+  background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04) 0%, transparent 40%);
+  text-align: center;
+  overflow-x: hidden;
+  color: white;
+}
+
+.container {
+  margin-top: 8vh;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px white; }
+  to { text-shadow: 0 0 25px #ff4da6; }
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 15px;
+  font-size: 16px;
+  transition: 0.3s;
+  background: white;
+  color: #ff4da6;
+}
+
+button:hover {
+  background: #ff4da6;
+  color: white;
+  transform: scale(1.05);
+}
+
+#gallery {
+  display: none;
+  margin-top: 20px;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.photo-grid img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.8);
+  transition: 0.4s;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.1);
+}
+
+.sticker {
+  position: absolute;
+  font-size: 28px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Happy Anniversary Sayangg🫶🫶🫶</h1>
+  <p>🤍🤍Kanjeng Ndoro Ayu Putri Anim Rahmawati Diningratih🤍🤍</p>
+
+  <button onclick="showGallery()">Klik Aku 💌</button>
+
+  <div id="gallery">
+    <h2>sedikit photo² kenangan kita hehe</h2>
+
+    <div class="photo-grid">
+      <img src="foto1.jpg">
+      <img src="foto2.jpg">
+      <img src="foto3.jpg">
+      <img src="foto4.jpg">
+    </div>
+
+    <p>I will always love you</p>
+  </div>
+</div>
+
+<script>
+function showGallery() {  
+  document.getElementById("gallery").style.display = "block";  
+  document.getElementById("bgMusic").play();
+}
+
+const emojis = ["🤍","🫶","","😁","💞","🫶","🎉"];
+for (let i = 0; i < 25; i++) {
+  let sticker = document.createElement("div");
+  sticker.className = "sticker";
+  sticker.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+  sticker.style.left = Math.random() * 100 + "vw";
+  sticker.style.animationDuration = (3 + Math.random() * 5) + "s";
+  document.body.appendChild(sticker);
+}
+</script>
+
+</body>
+  </html>
